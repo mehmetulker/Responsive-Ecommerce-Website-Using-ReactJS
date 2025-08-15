@@ -2,6 +2,17 @@ import React from "react";
 import { assets } from "../assets/assets";
 
 function Hero() {
+  // Get a random hero image from hero_img1, hero_img2, hero_img3
+  const heroImages = [
+    assets.hero_img,
+    assets.hero_img2,
+    assets.hero_img3,
+    assets.hero_img4,
+    assets.hero_img5,
+  ];
+  const randomIndex = Math.floor(Math.random() * heroImages.length);
+  const randomHeroImg = heroImages[randomIndex];
+
   return (
     <div className="flex flex-col sm:flex-row border border-gray-400">
       {/* Hero Left Side */}
@@ -21,7 +32,7 @@ function Hero() {
         </div>
       </div>
       {/* Hero Right Side */}
-      <img className="w-full sm:w-1/2" src={assets.hero_img} alt="" />
+      <img className="w-full sm:w-1/2" src={randomHeroImg} alt="" />
     </div>
   );
 }
